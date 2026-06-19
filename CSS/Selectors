@@ -1,0 +1,82 @@
+Selectors are not properties. They are patterns used to select HTML elements.
+
+# CSS Selectors
+
+## 1. Universal Selector
+- `*`
+
+## 2. Element (Type) Selector
+- `h1`
+- `p`
+- `div`
+- `span`
+
+## 3. Class Selector
+- `.classname`
+
+## 4. ID Selector
+- `#idname`
+
+## 5. Grouping Selector
+- `h1, p, div`
+
+## 6. Descendant Selector
+- `div p`
+
+## 7. Child Selector
+- `div > p`
+
+## 8. Adjacent Sibling Selector
+- `h1 + p`
+
+## 9. General Sibling Selector
+- `h1 ~ p`
+
+## 10. Attribute Selectors
+- `[attribute]`
+- `[attribute="value"]`
+- `[attribute~="value"]`
+- `[attribute|="value"]`
+- `[attribute^="value"]`
+- `[attribute$="value"]`
+- `[attribute*="value"]`
+
+## 11. Pseudo-Class Selectors
+- `:hover`
+- `:active`
+- `:focus`
+- `:visited`
+- `:link`
+- `:checked`
+- `:disabled`
+- `:enabled`
+- `:first-child`
+- `:last-child`
+- `:nth-child()`
+- `:nth-of-type()`
+- `:not()`
+- `:empty`
+- `:root`
+
+## 12. Pseudo-Element Selectors
+- `::before`
+- `::after`
+- `::first-letter`
+- `::first-line`
+- `::selection`
+- `::placeholder`
+- `::marker`
+
+## Most Important Selectors
+
+- `*` → Universal Selector
+- `h1` → Element Selector
+- `.class` → Class Selector
+- `#id` → ID Selector
+- `div p` → Descendant Selector
+- `div > p` → Child Selector
+- `:hover` → Hover State
+- `:focus` → Focus State
+- `:nth-child()` → Select Specific Child
+- `::before` → Insert Content Before Element
+- `::after` → Insert Content After Element
