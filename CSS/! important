@@ -1,0 +1,74 @@
+# CSS !important
+## Definition
+The `!important` rule gives a CSS property the highest priority and overrides normal specificity rules.
+## Syntax
+```css
+selector {
+    property: value !important;
+}
+```
+## Example
+```css
+p {
+    color: blue;
+}
+#title {
+    color: red;
+}
+p {
+    color: green !important;
+}
+```
+```html
+<p id="title">Hello World</p>
+```
+Result:
+```text
+Hello World → Green
+```
+Even though the ID selector has higher specificity, `!important` wins.
+---
+## When to Use
+- Override third-party CSS.
+- Override framework styles (Bootstrap, Tailwind, etc.).
+- Force a style when specificity becomes difficult to manage.
+---
+## When NOT to Use
+- Avoid using it for regular styling.
+- Excessive use makes CSS difficult to maintain and debug.
+---
+## Priority Order
+```text
+!important
+↓
+Inline Styles
+↓
+ID Selectors
+↓
+Class Selectors
+↓
+Element Selectors
+```
+## Example with Inline Style
+
+```css
+p {
+    color: red !important;
+}
+```
+```html
+<p style="color: blue;">Hello</p>
+```
+Result:
+```text
+Red
+```
+`!important` overrides the normal inline style.
+---
+## Easy Memory Trick
+```text
+!important > Inline > ID > Class > Element
+```
+## One-Line Definition
+
+`!important` gives a CSS declaration the highest priority, overriding normal specificity and cascade rules.
