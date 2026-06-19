@@ -1,12 +1,13 @@
 Most Important Text Properties
 text-align → Aligns text (left, center, right, justify)
 text-decoration → Adds underline, overline, or strike-through
-text-transform → Changes text case
+text-transform → Changes text case(lowercase,uppercase)
 line-height → Controls line spacing
 letter-spacing → Controls spacing between letters
 word-spacing → Controls spacing between words
 text-shadow → Adds shadow to text
 white-space → Controls wrapping and spacing behavior
+text-wrap->property controls how text inside an element is wrapped. 
 
 # CSS Text Properties - Definitions
 
