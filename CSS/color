@@ -1,0 +1,30 @@
+color Property
+Purpose:
+The color property is used to set the text color of an element.
+color: value;
+##color = Text Color
+
+# CSS Color Properties
+
+| Property | One-Line Definition |
+|-----------|---------------------|
+| `color` | Sets the color of the text content. |
+| `background-color` | Sets the background color of an element. |
+| `border-color` | Sets the color of all four borders. |
+| `border-top-color` | Sets the color of the top border. |
+| `border-right-color` | Sets the color of the right border. |
+| `border-bottom-color` | Sets the color of the bottom border. |
+| `border-left-color` | Sets the color of the left border. |
+| `outline-color` | Sets the color of the outline outside the border. |
+| `text-decoration-color` | Sets the color of text decorations such as underline or strike-through. |
+| `caret-color` | Sets the color of the blinking text cursor in input fields. |
+| `accent-color` | Sets the color of form controls like checkboxes, radio buttons, and sliders. |
+
+## Most Commonly Used
+
+- `color` → Text color
+- `background-color` → Background color
+- `border-color` → Border color
+- `text-decoration-color` → Underline/line-through color
+- `caret-color` → Input cursor color
+- `accent-color` → Checkbox, radio button, slider color
