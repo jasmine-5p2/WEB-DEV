@@ -1,0 +1,150 @@
+# CSS Selector Specificity
+
+## Definition
+
+Specificity is the priority system used by CSS to determine which style rule is applied when multiple rules target the same element.
+
+## Specificity Order (Highest → Lowest)
+
+1. Inline Styles
+2. ID Selectors (`#id`)
+3. Class Selectors (`.class`), Attribute Selectors, Pseudo-Classes
+4. Element Selectors (`h1`, `p`, `div`) and Pseudo-Elements
+5. Universal Selector (`*`)
+
+## Specificity Values
+
+| Selector Type | Value |
+|--------------|--------|
+| Inline Style | 1000 |
+| ID Selector | 100 |
+| Class, Attribute, Pseudo-Class | 10 |
+| Element, Pseudo-Element | 1 |
+| Universal Selector | 0 |
+
+## Examples
+
+### Element Selector
+
+```css
+p {
+    color: blue;
+}
+```
+
+Specificity = **1**
+
+---
+
+### Class Selector
+
+```css
+.text {
+    color: green;
+}
+```
+
+Specificity = **10**
+
+---
+
+### ID Selector
+
+```css
+#title {
+    color: red;
+}
+```
+
+Specificity = **100**
+
+---
+
+### Inline Style
+
+```html
+<p style="color:red;">Hello</p>
+```
+
+Specificity = **1000**
+
+## Comparison Examples
+
+### Example 1
+
+```css
+p {
+    color: blue;
+}
+
+.text {
+    color: green;
+}
+```
+
+```html
+<p class="text">Hello</p>
+```
+
+Winner: `.text` (10 > 1)
+
+---
+
+### Example 2
+
+```css
+.text {
+    color: green;
+}
+
+#title {
+    color: red;
+}
+```
+
+```html
+<p id="title" class="text">Hello</p>
+```
+
+Winner: `#title` (100 > 10)
+
+---
+
+### Example 3
+
+```css
+p {
+    color: blue;
+}
+
+#title {
+    color: red;
+}
+```
+
+```html
+<p id="title" style="color:black;">Hello</p>
+```
+
+Winner: Inline Style (1000 > 100)
+
+## Important Rule
+
+```css
+!important
+```
+
+Overrides normal specificity and should be used sparingly.
+
+```css
+p {
+    color: red !important;
+}
+```
+
+## Easy Memory Trick
+
+```text
+Inline > ID > Class > Element > Universal
+1000   >100 >10    >1      >0
+```
