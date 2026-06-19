@@ -1,0 +1,126 @@
+# CSS Inheritance
+
+## Definition
+
+Inheritance is the mechanism by which some CSS properties automatically receive the value of their parent element.
+
+## Example
+
+```html
+<div>
+    <p>Hello World</p>
+</div>
+```
+
+```css
+div {
+    color: blue;
+}
+```
+
+Result:
+
+```text
+Hello World  → Blue
+```
+
+The `<p>` inherits the `color` from its parent `<div>`.
+
+---
+
+## Common Inherited Properties
+
+### Text Properties
+- `color`
+- `text-align`
+- `letter-spacing`
+- `word-spacing`
+- `line-height`
+
+### Font Properties
+- `font`
+- `font-family`
+- `font-size`
+- `font-style`
+- `font-weight`
+
+### Other Properties
+- `visibility`
+- `cursor`
+
+---
+
+## Properties That Do NOT Inherit
+
+- `margin`
+- `padding`
+- `border`
+- `width`
+- `height`
+- `background`
+- `background-color`
+- `position`
+
+Example:
+
+```css
+div {
+    background-color: yellow;
+}
+```
+
+The child element will **not** automatically get the yellow background.
+
+---
+
+## Force Inheritance
+
+```css
+p {
+    color: inherit;
+}
+```
+
+The child explicitly takes the parent's value.
+
+---
+
+## Example
+
+```html
+<div class="parent">
+    <p>Paragraph</p>
+</div>
+```
+
+```css
+.parent {
+    color: blue;
+    font-size: 20px;
+}
+```
+
+Result:
+
+- Paragraph color → Blue
+- Paragraph font size → 20px
+
+Both values are inherited.
+
+---
+
+## Easy Memory Trick
+
+### Usually Inherited
+- Text
+- Font
+- Visibility
+
+### Usually Not Inherited
+- Box Model (margin, padding, border)
+- Layout (width, height, position)
+- Background
+
+## One-Line Definition
+
+**Inheritance** is the process by which child elements automatically receive certain CSS property values from their parent elements.
