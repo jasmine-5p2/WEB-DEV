@@ -1,0 +1,30 @@
+Most Important Text Properties
+text-align → Aligns text (left, center, right, justify)
+text-decoration → Adds underline, overline, or strike-through
+text-transform → Changes text case
+line-height → Controls line spacing
+letter-spacing → Controls spacing between letters
+word-spacing → Controls spacing between words
+text-shadow → Adds shadow to text
+white-space → Controls wrapping and spacing behavior
+
+# CSS Text Properties - Definitions
+
+| Property | Definition |
+|----------|------------|
+| `text-align` | Aligns text horizontally within an element. |
+| `text-decoration` | Adds decorations such as underline, overline, or line-through to text. |
+| `text-decoration-line` | Specifies which decoration line is applied to text. |
+| `text-decoration-color` | Sets the color of the text decoration. |
+| `text-decoration-style` | Sets the style of the decoration line (solid, dashed, dotted, etc.). |
+| `text-transform` | Changes the capitalization of text. |
+| `text-indent` | Adds indentation to the first line of text. |
+| `text-shadow` | Applies a shadow effect to text. |
+| `text-overflow` | Determines how hidden overflow text is displayed. |
+| `line-height` | Sets the height of each line of text. |
+| `letter-spacing` | Adjusts the space between characters. |
+| `word-spacing` | Adjusts the space between words. |
+| `white-space` | Controls how spaces and line breaks are handled. |
+| `vertical-align` | Aligns inline elements or table-cell content vertically. |
+| `direction` | Specifies the text direction (LTR or RTL). |
+| `unicode-bidi` | Controls the handling of bidirectional text. |
