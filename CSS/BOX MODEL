@@ -1,0 +1,55 @@
+# CSS Box Model
+
+## Definition
+The CSS Box Model represents every HTML element as a box consisting of content, padding, border, and margin.
+
+## Components
+- Content → Actual text, image, or element content.
+- Padding → Space between content and border.
+- Border → Surrounds the padding and content.
+- Margin → Space outside the border.
+
+## Structure
+Content → Padding → Border → Margin
+
+## Important Properties
+
+### Content
+- width
+- height
+
+### Padding
+- padding
+- padding-top
+- padding-right
+- padding-bottom
+- padding-left
+
+### Border
+- border
+- border-width
+- border-style
+- border-color
+- border-radius
+
+### Margin
+- margin
+- margin-top
+- margin-right
+- margin-bottom
+- margin-left
+
+### Box Sizing
+- box-sizing
+
+## Types of box-sizing
+- content-box (default)
+- border-box
+
+## Formula
+Total Width = Width + Left Padding + Right Padding + Left Border + Right Border + Left Margin + Right Margin
+
+Total Height = Height + Top Padding + Bottom Padding + Top Border + Bottom Border + Top Margin + Bottom Margin
+
+## Interview Definition
+CSS Box Model is a layout model that defines how content, padding, border, and margin determine an element's size and spacing.
