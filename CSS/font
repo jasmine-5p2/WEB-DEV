@@ -1,0 +1,37 @@
+# font
+## Definition
+The `font` property is a shorthand property used to set multiple font-related properties in a single declaration.
+
+# CSS Font Properties
+
+| Property | Definition |
+|----------|------------|
+| `font` | Shorthand property for all font-related properties. |
+| `font-family` | Specifies the font or list of fonts used for text. |
+| `font-size` | Sets the size of the text. |
+| `font-weight` | Sets the thickness (boldness) of the text. |
+| `font-style` | Sets the style of the text (normal, italic, oblique). |
+| `font-variant` | Displays text in small-caps or other variant forms. |
+| `font-stretch` | Expands or condenses the width of a font. |
+| `font-size-adjust` | Preserves text readability by adjusting font size based on x-height. |
+| `line-height` | Sets the height of a line of text. |
+
+## Most Commonly Used
+
+- `font-family` → Specifies the font type
+- `font-size` → Sets text size
+- `font-weight` → Makes text bold or lighter
+- `font-style` → Makes text italic or oblique
+- `line-height` → Controls spacing between lines
+- `font` → Shorthand for multiple font properties
+
+
+Font Shorthand Example
+font: italic bold 16px/1.5 Arial, sans-serif;
+
+
+font-style: italic;
+font-weight: bold;
+font-size: 16px;
+line-height: 1.5;
+font-family: Arial, sans-serif;
