@@ -1,0 +1,364 @@
+# Default Export vs Named Export
+
+## Simple Definition
+
+React (and JavaScript ES6 modules) provides **two ways to export** components, functions, or variables from a file:
+
+1. **Default Export** → Export **one main value** from a file.
+2. **Named Export** → Export **multiple values** from a file using their names.
+
+---
+
+# Default Export
+
+## Definition
+
+> **A default export is used when a file exports one main component, function, or variable.**
+
+Each file can have **only one default export**.
+
+### Syntax
+
+```jsx
+export default ComponentName;
+```
+
+---
+
+## Example
+
+### Header.jsx
+
+```jsx
+function Header() {
+    return <h1>Welcome to React</h1>;
+}
+
+export default Header;
+```
+
+### App.jsx
+
+```jsx
+import Header from "./Header";
+
+function App() {
+    return <Header />;
+}
+
+export default App;
+```
+
+---
+
+## Important Points
+
+- Only **one default export** per file.
+- Import name **can be changed**.
+- Curly braces `{}` are **not used** while importing.
+
+Example:
+
+```jsx
+import MyHeader from "./Header";
+```
+
+This works because it is a **default export**.
+
+---
+
+# Named Export
+
+## Definition
+
+> **A named export is used when a file exports multiple components, functions, or variables.**
+
+A file can have **multiple named exports**.
+
+### Syntax
+
+```jsx
+export { variableName };
+```
+
+or
+
+```jsx
+export const name = "John";
+```
+
+---
+
+## Example
+
+### data.js
+
+```jsx
+export const name = "John";
+
+export const age = 22;
+
+export function greet() {
+    return "Hello";
+}
+```
+
+### App.jsx
+
+```jsx
+import { name, age, greet } from "./data";
+
+function App() {
+    return (
+        <>
+            <h1>{name}</h1>
+            <h2>{age}</h2>
+            <h3>{greet()}</h3>
+        </>
+    );
+}
+
+export default App;
+```
+
+---
+
+## Important Points
+
+- Multiple named exports are allowed.
+- Import names **must match exactly**.
+- Curly braces `{}` are required.
+
+Correct:
+
+```jsx
+import { name } from "./data";
+```
+
+Incorrect:
+
+```jsx
+import { Name } from "./data";
+```
+
+JavaScript is **case-sensitive**.
+
+---
+
+# Using Default and Named Export Together
+
+### data.js
+
+```jsx
+const company = "OpenAI";
+
+const name = "John";
+
+const age = 22;
+
+export default company;
+
+export { name, age };
+```
+
+### App.jsx
+
+```jsx
+import company, { name, age } from "./data";
+
+function App() {
+    return (
+        <>
+            <h1>{company}</h1>
+            <h2>{name}</h2>
+            <h3>{age}</h3>
+        </>
+    );
+}
+
+export default App;
+```
+
+Output
+
+```
+OpenAI
+John
+22
+```
+
+---
+
+# Difference Between Default Export and Named Export
+
+| Feature | Default Export | Named Export |
+|----------|----------------|--------------|
+| Number of exports | Only one per file | Multiple per file |
+| Import syntax | `import Header from "./Header"` | `import { Header } from "./Header"` |
+| Curly braces | ❌ Not required | ✅ Required |
+| Import name | Can be changed | Must match the exported name |
+| Common use | React components | Variables, functions, utilities, constants |
+
+---
+
+# Comparison Example
+
+## Default Export
+
+```jsx
+// Header.jsx
+
+function Header() {}
+
+export default Header;
+```
+
+```jsx
+import Header from "./Header";
+```
+
+or
+
+```jsx
+import MyComponent from "./Header";
+```
+
+Both are valid.
+
+---
+
+## Named Export
+
+```jsx
+export function Header() {}
+```
+
+Import:
+
+```jsx
+import { Header } from "./Header";
+```
+
+This is valid.
+
+But this is **not**:
+
+```jsx
+import { MyComponent } from "./Header";
+```
+
+Unless you exported `MyComponent`.
+
+---
+
+# Common Mistakes
+
+### ❌ Forgetting Curly Braces
+
+```jsx
+// data.js
+
+export const name = "John";
+```
+
+Incorrect
+
+```jsx
+import name from "./data";
+```
+
+Correct
+
+```jsx
+import { name } from "./data";
+```
+
+---
+
+### ❌ Using Curly Braces with Default Export
+
+```jsx
+// Header.jsx
+
+export default Header;
+```
+
+Incorrect
+
+```jsx
+import { Header } from "./Header";
+```
+
+Correct
+
+```jsx
+import Header from "./Header";
+```
+
+---
+
+### ❌ Multiple Default Exports
+
+```jsx
+export default Header;
+
+export default Footer;
+```
+
+This is **not allowed**.
+
+---
+
+# When to Use Which?
+
+### Use **Default Export** when:
+
+- Exporting a single React component.
+- The file has one main purpose.
+
+Example:
+
+```jsx
+Header.jsx
+Navbar.jsx
+Footer.jsx
+App.jsx
+```
+
+---
+
+### Use **Named Export** when:
+
+- Exporting multiple functions.
+- Exporting utility methods.
+- Exporting constants.
+- Exporting helper functions.
+
+Example:
+
+```jsx
+utils.js
+
+export const PI = 3.14;
+
+export function add() {}
+
+export function subtract() {}
+```
+
+---
+
+# Quick Revision
+
+| Default Export | Named Export |
+|----------------|--------------|
+| One export per file | Multiple exports per file |
+| No `{}` while importing | Uses `{}` while importing |
+| Import name can be changed | Import name must match |
+| Mostly used for React components | Mostly used for functions, constants, utilities |
+
+---
+
+# Interview Answer
+
+> **Default export is used to export one main component, function, or variable from a file, and it is imported without curly braces. Named export is used to export multiple values from a file, and each value is imported using curly braces with its exact exported name. React components are commonly exported using default export, while utility functions and constants are often exported using named exports.**
