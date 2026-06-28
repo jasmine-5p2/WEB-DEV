@@ -1,23 +1,15 @@
 # React Fragments
-
 ## Simple Definition
-
 > **A React Fragment is a wrapper that allows you to group multiple JSX elements without adding an extra HTML element to the DOM.**
-
 In simple words:
-
 > **Fragments let you return multiple elements without creating an unnecessary `<div>`.**
 
 ---
 
 # Why Do We Need Fragments?
-
 React components must return **one parent element**.
-
 For example:
-
 ### ❌ Incorrect
-
 ```jsx
 function App() {
     return (
@@ -26,9 +18,7 @@ function App() {
     );
 }
 ```
-
 Error:
-
 ```
 Adjacent JSX elements must be wrapped in an enclosing tag.
 ```
@@ -47,16 +37,13 @@ function App() {
     );
 }
 ```
-
 Output (DOM):
-
 ```html
 <div>
     <h1>Hello</h1>
     <p>Welcome</p>
 </div>
 ```
-
 The `<div>` is added to the DOM.
 
 ---
@@ -69,22 +56,14 @@ Example:
 
 ```html
 <body>
-
 <div>
-
 <h1>Hello</h1>
-
 <p>Welcome</p>
-
 </div>
-
 </body>
 ```
-
 The `<div>` serves no purpose.
-
 Extra elements can:
-
 - Increase DOM size
 - Affect CSS layouts
 - Affect Flexbox/Grid layouts
@@ -103,7 +82,6 @@ function App() {
     );
 }
 ```
-
 Output (DOM):
 
 ```html
@@ -111,11 +89,7 @@ Output (DOM):
 
 <p>Welcome</p>
 ```
-
 No extra `<div>` is created.
-
----
-
 # Two Ways to Use Fragments
 
 ## 1. Short Syntax (Recommended)
