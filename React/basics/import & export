@@ -1,0 +1,288 @@
+# Import and Export in React
+
+## Simple Definition
+
+> **`export` is used to make a variable, function, or component available to other files, and `import` is used to use that exported item in another file.**
+
+In simple words:
+
+- **Export** → Share something from a file.
+- **Import** → Bring that shared item into another file.
+
+---
+
+# Why Do We Need Import and Export?
+
+A React application consists of many files.
+
+Example:
+
+```
+src/
+│
+├── App.jsx
+├── Header.jsx
+├── Footer.jsx
+├── Navbar.jsx
+```
+
+Each component is written in a separate file.
+
+To use `Header` inside `App`, we need:
+
+- `export` in `Header.jsx`
+- `import` in `App.jsx`
+
+---
+
+# Step 1: Export a Component
+
+## Header.jsx
+
+```jsx
+function Header() {
+    return <h1>Welcome to React</h1>;
+}
+
+export default Header;
+```
+
+Here,
+
+```jsx
+export default Header;
+```
+
+makes the `Header` component available to other files.
+
+---
+
+# Step 2: Import the Component
+
+## App.jsx
+
+```jsx
+import Header from "./Header";
+
+function App() {
+    return (
+        <div>
+            <Header />
+        </div>
+    );
+}
+
+export default App;
+```
+
+Now the `Header` component can be used inside `App`.
+
+---
+
+# How Import and Export Work
+
+```
+Header.jsx
+│
+│ export Header
+▼
+App.jsx
+│
+│ import Header
+▼
+<Header />
+│
+▼
+Browser
+```
+
+---
+
+# Import Syntax
+
+```jsx
+import ComponentName from "./FileName";
+```
+
+Example
+
+```jsx
+import Header from "./Header";
+```
+
+---
+
+# Export Syntax
+
+```jsx
+export default ComponentName;
+```
+
+Example
+
+```jsx
+export default Header;
+```
+
+---
+
+# Importing CSS
+
+```jsx
+import "./App.css";
+```
+
+This imports the CSS file into the component.
+
+---
+
+# Importing Images
+
+Suppose:
+
+```
+src/
+    assets/
+        logo.png
+```
+
+Import the image:
+
+```jsx
+import logo from "./assets/logo.png";
+```
+
+Use it:
+
+```jsx
+<img src={logo} alt="Logo" />
+```
+
+---
+
+# Importing JavaScript Variables
+
+## data.js
+
+```jsx
+const name = "John";
+
+export default name;
+```
+
+## App.jsx
+
+```jsx
+import name from "./data";
+
+function App() {
+    return <h1>{name}</h1>;
+}
+```
+
+Output
+
+```
+John
+```
+
+---
+
+# File Extension
+
+Usually we write:
+
+```jsx
+import Header from "./Header";
+```
+
+instead of
+
+```jsx
+import Header from "./Header.jsx";
+```
+
+React automatically resolves the `.jsx` extension.
+
+---
+
+# Common Mistakes
+
+### ❌ Forgetting to Export
+
+```jsx
+function Header() {}
+```
+
+Then importing:
+
+```jsx
+import Header from "./Header";
+```
+
+Error:
+
+```
+Module has no exported member...
+```
+
+Always export the component.
+
+---
+
+### ❌ Wrong File Path
+
+```jsx
+import Header from "./Header";
+```
+
+If `Header.jsx` is inside `components/`:
+
+Correct:
+
+```jsx
+import Header from "./components/Header";
+```
+
+---
+
+### ❌ Incorrect Capitalization
+
+```jsx
+import header from "./Header";
+```
+
+Correct:
+
+```jsx
+import Header from "./Header";
+```
+
+Component names should start with a capital letter.
+
+---
+
+# Key Points
+
+- `export` shares a component, function, or variable.
+- `import` brings it into another file.
+- React projects use import and export extensively.
+- Use relative paths like `./Header` or `./components/Navbar`.
+- Every component must be exported before it can be imported elsewhere.
+
+---
+
+# Quick Revision
+
+| Keyword | Purpose |
+|----------|---------|
+| `export` | Makes a variable, function, or component available to other files. |
+| `import` | Brings an exported item into the current file. |
+| `export default` | Exports one main value from a file. |
+| `import Header from "./Header"` | Imports the default export from `Header.jsx`. |
+
+---
+
+# Interview Answer
+
+> **In React, `export` is used to make components, functions, or variables available outside a file, while `import` is used to bring them into another file. This allows React applications to be organized into reusable, modular components stored in separate files.**
