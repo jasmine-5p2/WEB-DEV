@@ -1,0 +1,961 @@
+# JavaScript Expressions in JSX (Curly Braces `{}`)
+## Simple Definition
+> **Curly braces `{}` in JSX allow you to embed JavaScript expressions inside JSX.**
+In simple words:# JavaScript Expressions in JSX (Curly Braces `{}`)
+
+## Simple Definition
+> **Curly braces `{}` in JSX allow you to embed JavaScript expressions inside JSX.**
+
+In simple words:
+> **Whenever you want to use JavaScript inside JSX, wrap it in `{}`.**
+
+---
+
+# Why Curly Braces?
+JSX looks like HTML, but it is actually JavaScript.
+To mix JavaScript with JSX, React uses **curly braces `{}`**.
+Example:
+```jsx
+const name = "John";
+
+function App() {
+    return <h1>Hello, {name}</h1>;
+}
+```
+Output
+```
+Hello, John
+```
+
+---
+
+# 1. Display Variables
+
+```jsx
+function App() {
+
+    const name = "Alice";
+
+    return (
+        <h1>Hello {name}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Hello Alice
+```
+
+---
+
+# 2. Perform Calculations
+
+```jsx
+function App() {
+
+    return (
+        <h1>{10 + 20}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+30
+```
+
+---
+
+# 3. Call Functions
+
+```jsx
+function greet() {
+    return "Good Morning";
+}
+
+function App() {
+
+    return (
+        <h1>{greet()}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Good Morning
+```
+
+---
+
+# 4. Use Object Properties
+
+```jsx
+function App() {
+
+    const student = {
+        name: "Rahul",
+        age: 22
+    };
+
+    return (
+        <>
+            <h1>{student.name}</h1>
+            <p>{student.age}</p>
+        </>
+    );
+
+}
+```
+
+Output
+
+```
+Rahul
+22
+```
+
+---
+
+# 5. Access Array Elements
+
+```jsx
+function App() {
+
+    const fruits = ["Apple", "Mango", "Orange"];
+
+    return (
+        <h1>{fruits[1]}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Mango
+```
+
+---
+
+# 6. Use Ternary Operator (Conditional Rendering)
+
+```jsx
+function App() {
+
+    const isLoggedIn = true;
+
+    return (
+        <h1>
+            {isLoggedIn ? "Welcome" : "Please Login"}
+        </h1>
+    );
+
+}
+```
+
+Output
+
+```
+Welcome
+```
+
+---
+
+# 7. Boolean Values
+
+```jsx
+function App() {
+
+    const isAdmin = true;
+
+    return (
+        <h1>{isAdmin.toString()}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+true
+```
+
+> **Note:** Writing `{true}` or `{false}` directly does **not** display anything.
+
+---
+
+# 8. Use Template Literals
+
+```jsx
+function App() {
+
+    const firstName = "John";
+    const lastName = "Doe";
+
+    return (
+        <h1>{`${firstName} ${lastName}`}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+John Doe
+```
+
+---
+
+# 9. Display Current Date
+
+```jsx
+function App() {
+
+    return (
+        <h1>{new Date().toLocaleDateString()}</h1>
+    );
+
+}
+```
+
+Example Output
+
+```
+28/06/2026
+```
+
+---
+
+# What Can Be Written Inside `{}`?
+
+✔ Variables
+
+```jsx
+{name}
+```
+
+✔ Numbers
+
+```jsx
+{100}
+```
+
+✔ Expressions
+
+```jsx
+{5 + 10}
+```
+
+✔ Function Calls
+
+```jsx
+{greet()}
+```
+
+✔ Object Properties
+
+```jsx
+{student.name}
+```
+
+✔ Array Elements
+
+```jsx
+{fruits[0]}
+```
+
+✔ Ternary Operator
+
+```jsx
+{age >= 18 ? "Adult" : "Minor"}
+```
+
+---
+
+# What Cannot Be Written Inside `{}`?
+
+## ❌ if Statement
+
+```jsx
+{
+    if (age > 18) {
+        return "Adult";
+    }
+}
+```
+
+Use a ternary operator instead:
+
+```jsx
+{age > 18 ? "Adult" : "Minor"}
+```
+
+---
+
+## ❌ for Loop
+
+```jsx
+{
+    for (let i = 0; i < 5; i++) {}
+}
+```
+
+Use `.map()` instead (covered later).
+
+---
+
+## ❌ Objects Directly
+
+```jsx
+const student = {
+    name: "John"
+};
+
+<h1>{student}</h1>
+```
+
+Output
+
+```
+Error
+```
+
+Correct:
+
+```jsx
+<h1>{student.name}</h1>
+```
+
+---
+
+# Complete Example
+
+```jsx
+function App() {
+
+    const name = "John";
+    const age = 22;
+
+    function greet() {
+        return "Welcome";
+    }
+
+    return (
+
+        <>
+            <h1>{name}</h1>
+
+            <h2>{age}</h2>
+
+            <h3>{10 + 20}</h3>
+
+            <h4>{greet()}</h4>
+
+            <h5>{age >= 18 ? "Adult" : "Minor"}</h5>
+        </>
+
+    );
+
+}
+
+export default App;
+```
+
+Output
+
+```
+John
+22
+30
+Welcome
+Adult
+```
+
+---
+
+# Common Mistakes
+
+### ❌ Forgetting Curly Braces
+
+```jsx
+<h1>name</h1>
+```
+
+Output
+
+```
+name
+```
+
+Correct
+
+```jsx
+<h1>{name}</h1>
+```
+
+Output
+
+```
+John
+```
+
+---
+
+### ❌ Trying to Print an Object
+
+```jsx
+<p>{student}</p>
+```
+
+Correct
+
+```jsx
+<p>{student.name}</p>
+```
+
+---
+
+### ❌ Using Statements Instead of Expressions
+
+Incorrect
+
+```jsx
+{
+    if (true) {
+        return "Hello";
+    }
+}
+```
+
+Correct
+
+```jsx
+{true ? "Hello" : "Bye"}
+```
+
+---
+
+# Expressions vs Statements
+
+| Expressions ✅ | Statements ❌ |
+|---------------|--------------|
+| Variables | `if` |
+| Numbers | `for` |
+| Arithmetic | `while` |
+| Function Calls | `switch` |
+| Ternary Operator | `return` |
+| Object Properties | `try...catch` |
+
+> **Remember:** JSX accepts **expressions**, not **statements**.
+
+---
+
+# Quick Revision
+
+| Use `{}` For | Example |
+|--------------|---------|
+| Variable | `{name}` |
+| Number | `{100}` |
+| Calculation | `{5 + 5}` |
+| Function Call | `{greet()}` |
+| Object Property | `{student.name}` |
+| Array Element | `{fruits[0]}` |
+| Ternary | `{age >= 18 ? "Adult" : "Minor"}` |
+
+---
+
+# Interview Answer
+
+> **Curly braces `{}` in JSX are used to embed JavaScript expressions inside JSX.
+They allow developers to display variables, perform calculations, call functions, access object properties, 
+use array elements, and write conditional expressions. JSX accepts JavaScript expressions but does not allow 
+statements like `if`, `for`, or `while` directly inside curly braces.**
+
+> **Whenever you want to use JavaScript inside JSX, wrap it in `{}`.**
+
+---
+
+# Why Curly Braces?
+
+JSX looks like HTML, but it is actually JavaScript.
+
+To mix JavaScript with JSX, React uses **curly braces `{}`**.
+
+Example:
+
+```jsx
+const name = "John";
+
+function App() {
+    return <h1>Hello, {name}</h1>;
+}
+```
+
+Output
+
+```
+Hello, John
+```
+
+---
+
+# 1. Display Variables
+
+```jsx
+function App() {
+
+    const name = "Alice";
+
+    return (
+        <h1>Hello {name}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Hello Alice
+```
+
+---
+
+# 2. Perform Calculations
+
+```jsx
+function App() {
+
+    return (
+        <h1>{10 + 20}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+30
+```
+
+---
+
+# 3. Call Functions
+
+```jsx
+function greet() {
+    return "Good Morning";
+}
+
+function App() {
+
+    return (
+        <h1>{greet()}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Good Morning
+```
+
+---
+
+# 4. Use Object Properties
+
+```jsx
+function App() {
+
+    const student = {
+        name: "Rahul",
+        age: 22
+    };
+
+    return (
+        <>
+            <h1>{student.name}</h1>
+            <p>{student.age}</p>
+        </>
+    );
+
+}
+```
+
+Output
+
+```
+Rahul
+22
+```
+
+---
+
+# 5. Access Array Elements
+
+```jsx
+function App() {
+
+    const fruits = ["Apple", "Mango", "Orange"];
+
+    return (
+        <h1>{fruits[1]}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+Mango
+```
+
+---
+
+# 6. Use Ternary Operator (Conditional Rendering)
+
+```jsx
+function App() {
+
+    const isLoggedIn = true;
+
+    return (
+        <h1>
+            {isLoggedIn ? "Welcome" : "Please Login"}
+        </h1>
+    );
+
+}
+```
+
+Output
+
+```
+Welcome
+```
+
+---
+
+# 7. Boolean Values
+
+```jsx
+function App() {
+
+    const isAdmin = true;
+
+    return (
+        <h1>{isAdmin.toString()}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+true
+```
+
+> **Note:** Writing `{true}` or `{false}` directly does **not** display anything.
+
+---
+
+# 8. Use Template Literals
+
+```jsx
+function App() {
+
+    const firstName = "John";
+    const lastName = "Doe";
+
+    return (
+        <h1>{`${firstName} ${lastName}`}</h1>
+    );
+
+}
+```
+
+Output
+
+```
+John Doe
+```
+
+---
+
+# 9. Display Current Date
+
+```jsx
+function App() {
+
+    return (
+        <h1>{new Date().toLocaleDateString()}</h1>
+    );
+
+}
+```
+
+Example Output
+
+```
+28/06/2026
+```
+
+---
+
+# What Can Be Written Inside `{}`?
+
+✔ Variables
+
+```jsx
+{name}
+```
+
+✔ Numbers
+
+```jsx
+{100}
+```
+
+✔ Expressions
+
+```jsx
+{5 + 10}
+```
+
+✔ Function Calls
+
+```jsx
+{greet()}
+```
+
+✔ Object Properties
+
+```jsx
+{student.name}
+```
+
+✔ Array Elements
+
+```jsx
+{fruits[0]}
+```
+
+✔ Ternary Operator
+
+```jsx
+{age >= 18 ? "Adult" : "Minor"}
+```
+
+---
+
+# What Cannot Be Written Inside `{}`?
+
+## ❌ if Statement
+
+```jsx
+{
+    if (age > 18) {
+        return "Adult";
+    }
+}
+```
+
+Use a ternary operator instead:
+
+```jsx
+{age > 18 ? "Adult" : "Minor"}
+```
+
+---
+
+## ❌ for Loop
+
+```jsx
+{
+    for (let i = 0; i < 5; i++) {}
+}
+```
+
+Use `.map()` instead (covered later).
+
+---
+
+## ❌ Objects Directly
+
+```jsx
+const student = {
+    name: "John"
+};
+
+<h1>{student}</h1>
+```
+
+Output
+
+```
+Error
+```
+
+Correct:
+
+```jsx
+<h1>{student.name}</h1>
+```
+
+---
+
+# Complete Example
+
+```jsx
+function App() {
+
+    const name = "John";
+    const age = 22;
+
+    function greet() {
+        return "Welcome";
+    }
+
+    return (
+
+        <>
+            <h1>{name}</h1>
+
+            <h2>{age}</h2>
+
+            <h3>{10 + 20}</h3>
+
+            <h4>{greet()}</h4>
+
+            <h5>{age >= 18 ? "Adult" : "Minor"}</h5>
+        </>
+
+    );
+
+}
+
+export default App;
+```
+
+Output
+
+```
+John
+22
+30
+Welcome
+Adult
+```
+
+---
+
+# Common Mistakes
+
+### ❌ Forgetting Curly Braces
+
+```jsx
+<h1>name</h1>
+```
+
+Output
+
+```
+name
+```
+
+Correct
+
+```jsx
+<h1>{name}</h1>
+```
+
+Output
+
+```
+John
+```
+
+---
+
+### ❌ Trying to Print an Object
+
+```jsx
+<p>{student}</p>
+```
+
+Correct
+
+```jsx
+<p>{student.name}</p>
+```
+
+---
+
+### ❌ Using Statements Instead of Expressions
+
+Incorrect
+
+```jsx
+{
+    if (true) {
+        return "Hello";
+    }
+}
+```
+
+Correct
+
+```jsx
+{true ? "Hello" : "Bye"}
+```
+
+---
+
+# Expressions vs Statements
+
+| Expressions ✅ | Statements ❌ |
+|---------------|--------------|
+| Variables | `if` |
+| Numbers | `for` |
+| Arithmetic | `while` |
+| Function Calls | `switch` |
+| Ternary Operator | `return` |
+| Object Properties | `try...catch` |
+
+> **Remember:** JSX accepts **expressions**, not **statements**.
+
+---
+
+# Quick Revision
+
+| Use `{}` For | Example |
+|--------------|---------|
+| Variable | `{name}` |
+| Number | `{100}` |
+| Calculation | `{5 + 5}` |
+| Function Call | `{greet()}` |
+| Object Property | `{student.name}` |
+| Array Element | `{fruits[0]}` |
+| Ternary | `{age >= 18 ? "Adult" : "Minor"}` |
+
+---
+
+# Interview Answer
+
+> **Curly braces `{}` in JSX are used to embed JavaScript expressions inside JSX. They allow developers to display variables, perform calculations, call functions, access object properties, use array elements, and write conditional expressions. JSX accepts JavaScript expressions but does not allow statements like `if`, `for`, or `while` directly inside curly braces.**
