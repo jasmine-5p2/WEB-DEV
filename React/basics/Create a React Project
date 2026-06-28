@@ -210,6 +210,14 @@ function App() {
 without div
 ❌ Using class instead of className
 
+
+Mistake 1: Component Name Should Start with a Capital Letter
+React treats lowercase tags as HTML elements.  
+<header />
+is interpreted as the HTML <header> tag, not your React component.
+If your component is named Header, use:
+<Header />
+
 Key Points
 React applications are built using components.
 A component returns JSX.
