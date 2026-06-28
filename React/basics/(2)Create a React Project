@@ -231,3 +231,29 @@ Interview Answer
 A React application starts with the App component, which returns JSX describing the UI. 
 The main.jsx file renders this component into the root element in index.html.
 React then converts the JSX into browser-renderable elements and displays the user interface.
+
+
+styling
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+#root {
+    width: 100%;
+    min-height: 100vh;
+}
+
+Which Method Should You Use?
+
+| Requirement                          | Best Method                                         |
+| ------------------------------------ | --------------------------------------------------- |
+| Change the entire page background    | `body { background-color: ... }`                    |
+| Change only the React app background | `#root { background-color: ... }`                   |
+| Style a specific page or component   | `.app { min-height: 100vh; background-color: ... }` |
+
