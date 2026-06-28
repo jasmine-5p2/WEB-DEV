@@ -1,0 +1,166 @@
+React is a JavaScript library used to build fast, interactive, and reusable user interfaces (UIs), especially for single-page applications (SPAs).
+React helps developers build modern web applications by dividing the UI into small, reusable components.
+
+Key Points
+📌 Developed by Meta (formerly Facebook).
+📌 Used to build dynamic and interactive websites.
+📌 Component-based architecture.
+📌 Uses a Virtual DOM for efficient updates.
+📌 Makes UI development faster, easier, and more maintainable.
+
+Example
+
+Instead of writing the same HTML multiple times:
+<button>Login</button>
+<button>Login</button>
+<button>Login</button>
+
+In React, you create one reusable component:
+function Button() {
+  return <button>Login</button>;
+}
+
+Then use it multiple times:
+<Button />
+<Button />
+<Button />
+
+**React** is a **JavaScript library** used to build **fast, interactive, and reusable user interfaces (UIs)**, especially for **single-page applications (SPAs)**.
+
+### Simple Definition
+
+> **React is a JavaScript library for building user interfaces by creating reusable components that update efficiently when data changes.**
+
+### Even Simpler
+
+> **React helps developers build modern web applications by dividing the UI into small, reusable components.**
+
+### Key Points
+
+* 📌 Developed by **Meta** (formerly Facebook).
+* 📌 Used to build dynamic and interactive websites.
+* 📌 Component-based architecture.
+* 📌 Uses a Virtual DOM for efficient updates.
+* 📌 Makes UI development faster, easier, and more maintainable.
+
+### Example
+
+Instead of writing the same HTML multiple times:
+
+```html
+<button>Login</button>
+<button>Login</button>
+<button>Login</button>
+```
+
+In React, you create one reusable component:
+
+```jsx
+function Button() {
+  return <button>Login</button>;
+}
+```
+
+Then use it multiple times:
+
+```jsx
+<Button />
+<Button />
+<Button />
+```
+
+### One-Line Interview Answer
+
+> **React is an open-source JavaScript library used to build fast, interactive, and reusable user interfaces using components.**
+
+
+What is JSX?
+Simple Definition
+JSX (JavaScript XML) is a syntax extension for JavaScript that lets you write HTML-like code inside JavaScript.
+
+Why JSX?
+
+Without JSX, React code becomes harder to read because you need to use React.createElement().
+
+Without JSX:
+const element = React.createElement(
+    "h1",
+    null,
+    "Hello, World!"
+);
+
+With JSX:
+const element = <h1>Hello, World!</h1>;
+JSX is much cleaner and easier to understand.
+✅ Is converted into JavaScript by tools like Babel before running in the browser.
+
+
+Example:
+const name = "John";
+function App() {
+    return <h1>Hello, {name}!</h1>;
+}
+Output:
+Hello, John!
+
+
+JSX Rules
+1..Return a single parent element.
+✔ Correct:
+return (
+<div>
+<h1>Hello</h1>
+<p>Welcome</p>
+</div>
+);
+
+❌ Incorrect:
+return (
+<h1>Hello</h1>
+<p>Welcome</p>
+);
+
+
+
+ 2..Close all tags.
+✔ Correct:
+<img src="image.png" />
+<br />
+<input />
+
+
+
+3..Use className instead of class.
+<div className="container">
+    Hello
+</div>
+
+
+4..Use camelCase for attributes.
+Examples:
+onClick
+tabIndex
+htmlFor
+autoFocus
+
+Interview Answer
+JSX (JavaScript XML) is a syntax extension for JavaScript that allows developers to write HTML-like code inside JavaScript.
+It makes React code more readable and is transpiled into JavaScript using Babel before execution.
+
+Prerequisites
+1. Install Node.js
+React requires Node.js, which includes npm (Node Package Manager).
+Check if it's installed:
+node -v or npm -v
+
+
+2. Install a Code Editor
+
+The most commonly used editor is:
+Visual Studio Code (VS Code)
+Useful extensions:
+ES7+ React Snippets
+Prettier
+ESLint
+Auto Rename Tag
+Auto Close Tag
