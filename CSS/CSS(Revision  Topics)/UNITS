@@ -18,15 +18,6 @@ Everything else is based on it.
 
 Instead of guessing sizes:
 
-```
-12
-16
-24
-32
-48
-64
-```
-
 Notice the pattern:
 
 - 16 → 24 (+8)
@@ -35,8 +26,6 @@ Notice the pattern:
 - 48 → 64 (+16)
 
 Most professional UIs use these values.
-
----
 
 ## 3. Rule of 8 (Spacing)
 
@@ -465,8 +454,10 @@ Use for:
 
 ## em
 Relative to the parent element.
-
 Use when child elements should scale with their parent.
+font sizeof the parent,in the case of typographical propertieslike 
+fonr-size,and font size of the element itself ,in the case of the properties like width
+
 
 ---
 
@@ -671,3 +662,69 @@ Huge Gap       → 64px+
 - **fr** → Flexible grid space
 
 > **Design first, size second. Think in relationships, not numbers.**
+
+snowball effect in EM
+
+
+
+
+
+
+#outer{
+height:400px;
+width:400px;
+margin-5px;
+font-size:20px;
+Padding:1em;
+}
+
+#inner{
+height:100px;
+width:100px;
+margin-left:10%;
+font-size:2em
+}
+for #outer the margin will be depend on total screen size
+in above the #inner margin will be according to the #outer width:400px
+
+
+Above, the font size is 20px for the outer div. The size of the inner font size is 2EM.
+2EM is nothing but 2 times 20PPX IN OUTER, so it will be double the size of the outer div. 
+IF 3EM TRIPLE OF OUTER
+
+In a bow padding, 1em is nothing, but it will be a font size if the font size is 2em or,
+let's say, 
+it's 3em when the padding is 1em. The padding will be according to the font size. 
+font-sixe=3em=30px
+padding=1em=30px
+padding=2em=60px (double)
+to get space insidebox (padding)
+
+<section><div> 1  <div>  2   <div> 3   </div></div></div></section>
+
+SNOWBAL EFFECT
+div{
+font-size:2em/0.5em
+}
+
+in above first div font size ==> x size
+          second ==> 2x size
+         third ==>3x size if used em
+
+rem
+according to root element,em is according to parent
+
+section{--------------->  root element
+font-size:15px
+}
+div{
+font-size:2rem
+}
+
+in above first div font size ==> will double of section
+          second ==>  will double of section
+         third ==> will double of section
+
+
+
+
