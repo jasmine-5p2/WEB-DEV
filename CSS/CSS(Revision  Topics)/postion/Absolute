@@ -1,0 +1,28 @@
+If in absolute, the positions be changed according to the ancestors? 
+Which means, for example, there is a div and the div is in a section div,
+then the div will be adjusted according to the section. If the section does not have any position,
+then the div inside the section will be positioned according to the body. 
+
+<body>
+
+    <section>
+        <h2>Static Demo</h2>
+        <div></div>
+        <div id="static"></div>
+    </section>
+
+    <section>
+        <h2>Relative Demo</h2>
+        <div></div>
+        <div id="relative"></div>
+        <div></div>
+    </section>
+
+    <section>
+        <h2>Absolute Demo</h2>
+        <div></div>
+        <div id="absolute"></div>
+        <div></div>
+    </section>
+
+</body>
