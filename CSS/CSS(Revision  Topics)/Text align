@@ -1,0 +1,40 @@
+Text align. property
+->text-align:left/start
+->text-align:right/end
+->text-align:center
+->text-align:justify
+
+The alignment will be based on the parent
+
+example:
+<html>
+    <head>
+        </head>
+        <body>
+            <div class="main">
+            <h1>Hello</h1>
+            </div>
+            </body>
+            
+</html>
+.main{
+   
+    border: 2px solid black;
+    width:300px;
+    align-items: center;
+    margin-left:200px ;
+}
+h1{
+    text-align: center;
+}
+
+--------A1 -------- >   --------------->---------------------------div(main)----------------------
+                      |                                                                           |
+                      |                                                                           |
+                      | -------------A2 >----h1-------- Center                                    |
+                      |                                                                           |
+                      |                                                                           |
+                      ----------------------------------------------------------------------------
+
+To get space for div(main) or to place it in center,left or right use "Margin Property"
+To get space for h1 or to place it in center,left,right use "Text-align Property"
