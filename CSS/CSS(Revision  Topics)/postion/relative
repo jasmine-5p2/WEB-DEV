@@ -1,0 +1,30 @@
+    Original Position
+┌─────────────────────────────────────────────┐
+│                                             │
+│   ┌──────┐                                  │
+│   │ Box  │                                  │
+│   └──────┘                                  │
+│      │                                      │
+│      │ top: 100px                           │
+│      ▼                                      │
+│                                             │
+│                 ┌──────┐                    │
+│                 │ Box  │                    │
+│                 └──────┘                    │
+│                                             │
+└─────────────────────────────────────────────┘
+
+In this, the top right, bottom left will be changed according to the box center postion.
+the offset (spcae/distance)  is relative to itself based on the values of top,right,bottom,and left.
+
+div{height,width}
+#relative{
+postion:relative
+top:100px
+left:100px
+background-color:yellow
+}
+
+the postion will change according to the center of box
+
+
