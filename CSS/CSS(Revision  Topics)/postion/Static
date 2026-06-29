@@ -1,0 +1,33 @@
+The top, right, bottom, left, and z-index properties have no effect. This is the default value.
+  Parent Container
+┌─────────────────────────────────────────────┐
+│                                             │
+│        ↓ 100px                              │
+│        │                                    │
+│   100px ───►  ┌──────┐                      │
+│               │      │                      │
+│               │ Box  │                      │
+│               │      │                      │
+│               └──────┘                      │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+│                                             │
+└─────────────────────────────────────────────┘
+In this, the fixed position will be depending upon the margin lengths. 
+From the margin lengths, the box will be shifted 100px from the top or 100px
+from the left or right, depending upon it. 
+
+But whatever, once it was given a position as some hundred px, then it will be 100px itself again.
+Later, if you use some like top: 100px, then it will not affect 
+
+div{
+height:100px
+width:100px
+}
+
+#static{
+background-color:yello
+postion:static;--->fixed
+top:100px -->no effect
