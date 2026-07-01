@@ -1,0 +1,50 @@
+flexbox-direction:row; main axis,left to right
+flexbox-direction:row-reverse; main axis,right to left
+flexbox-direction:column; main axis,top to bottom
+flexbox-direction:row; main axis,bottom to top
+
+
+.main{
+  border:2px solid black;
+  display:flex;
+  width:80%;
+  height: 300px;
+  flex-direction: column-reverse;
+  }
+  main div{
+    width:900px;
+    height: 100px;
+
+  }
+  .in{
+   width:100px;
+    height: 100px;
+    }
+Check the difference between (.in) and (main div) 
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+     <div style="background-color:red" class="in">one</div>
+         <div  style="background-color:green" class="in">two</div>
+             <div  style="background-color:yellow" class="in">three</div>
+              <div style="background-color:red" class="in">one</div>
+         <div  style="background-color:green"  class="in">two</div>
+             <div  style="background-color:yellow" class="in">three</div>
+              <div style="background-color:red" class="in">one</div>
+         <div  style="background-color:green" class="in">two</div>
+             <div  style="background-color:yellow"  class="in">three</div>
+      </div>
+     
+     
+  </body>
+</html>
+  
