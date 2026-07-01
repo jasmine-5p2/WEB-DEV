@@ -1,0 +1,59 @@
+FLEXBOX -PDF
+
+It is one-dimensional. Method to arrange elements in columns and rows
+ Flexbox is used to make the website responsive.
+What does it mean by responsive? It is responsive,
+which means the layout is changed according to the screen size.
+It might be mobile, laptop, iPad, etc. To make things responsive, use flexbox. 
+
+
+direction=row
+            |
+            |
+            |
+            |
+            |
+--------------------------------------  main-axis
+            |
+            |
+            |
+            |
+            |
+           cross axis
+
+example:
+.main{
+  border:2px solid black;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  }
+
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+     <meta charset="utf-8">
+    <title>Hello World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="main">
+     <div>one</div>
+         <div>two</div>
+             <div>three</div>
+      </div>
+     
+     
+  </body>
+</html>
+
+
+The display will be in the center because, after using flex, if we use the align-items center,
+then the items will be aligned at the center. This is because of the div, and inside the div there are three motives to do so.
+To arrange such kinds of elements, we use align-items center. If we use flex-direction column, the items will be in the column. 
+If we use flex-direction row, then the items will be arranged in the row. 
+
+
+
