@@ -55,5 +55,12 @@ then the items will be aligned at the center. This is because of the div, and in
 To arrange such kinds of elements, we use align-items center. If we use flex-direction column, the items will be in the column. 
 If we use flex-direction row, then the items will be arranged in the row. 
 
+BLOCK:
+ it will take the complete width. How much? It takes the complete screen. 
+In block property examples like h tag, heading tag, div 
+INLINE:
+In the inline property, it will take only the space required. 
+Syntax like paragraph tag, image tag ,span tag
+
 
 
