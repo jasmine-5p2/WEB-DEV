@@ -1,0 +1,27 @@
+sets whether flex items are forced onto one line or can wrap onto multiplie lines
+
+forced the element will occupoy the space
+if outer container is 300 width 
+inner container is 500 width then it will occupy completely 500 if used wrap
+
+
+flex-wrap:nowrap
+flex-wrap:wrap
+flex-wrap:wrap-reverse
+
+
+align-items;start,end,center,basline--->cross aix
+
+justify-content ;distribute space around
+
+Align Content
+
+It sets the distribution of space between and around content items along a Flexbox's cross-axis.
+
+align-content: flex-start;
+align-content: flex-end;
+align-content: center;
+align-content: space-between;
+align-content: space-around;
+align-content: space-evenly;
+align-content: baseline;
