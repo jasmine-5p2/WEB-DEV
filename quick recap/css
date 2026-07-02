@@ -1,6 +1,9 @@
 To get things horizontally at the bottom, like in a music player, if you want to get at the bottom, then we 
 position:fixed
 bottom:0
+sticky 
+position: sticky;
+top: 0;
 -----------------------------------------------------------------------------------------------------------
 Items move to the next line when there isn't enough room.
 #container {
