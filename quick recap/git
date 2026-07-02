@@ -1,0 +1,16 @@
+git init
+git status
+git add .
+git commit -m "Initial commit"
+git remote add origin <repository-url>
+git push -u origin main
+
+Create and switch in one command
+git checkout -b flexbox
+
+Create a new branch
+git branch <branch-name>
+
+Switch to the new branch
+git switch flexbox
+git checkout flexbox
