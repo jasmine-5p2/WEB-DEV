@@ -1,0 +1,29 @@
+To get things horizontally at the bottom, like in a music player, if you want to get at the bottom, then we 
+position:fixed
+bottom:0
+-----------------------------------------------------------------------------------------------------------
+Items move to the next line when there isn't enough room.
+#container {
+    display: flex;
+    flex-wrap: wrap;
+}
++----------------------+
+| [1][2][3]            |
+| [4][5][6]            |
++----------------------+
+----------------------------------------------------------------------------------------------------------------------
+text-align - it arranges all the elements in a div
+-------------------------------------------------------------------------------------------------------------------
+align-items only works if the parent element is a flex container (or a grid container). So you must set:
+.container {
+    display: flex;
+    align-items: center;
+}
+Rule to remember:
+display: flex; → enables Flexbox.
+justify-content → aligns items on the main axis.
+align-items → aligns items on the cross axis.
+Remember:
+text-align → centers text.
+justify-content → positions flex items along the main axis.
+align-items → positions flex items along the cross axis.
